@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: dominikrosser.me
+Token: bbfd0d46bfb6d44beacfe6816d8e1d1c80ce3680bfdeda539b8f578dacb6bca1
