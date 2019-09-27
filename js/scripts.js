@@ -21,18 +21,11 @@ $(function () {
 	'use strict';
 	
 	
-	/*
-		Vars
-	*/
-	
+	/* Vars */
 	var width = $(window).width();
 	var height = $(window).height();
 
-
-	/*
-		Typed subtitle
-	*/
-
+	/* Typed subtitle */
 	$('.typed-title').typed({
 		stringsElement: $('.typing-title'),
 		backDelay: 5000, /* Delay in text change */
@@ -40,11 +33,7 @@ $(function () {
 		loop: true
 	});
 
-
-	/*
-		Menu Mobile
-	*/
-
+	/* Menu Mobile */
 	$('.header').on('click', '.menu-btn', function(){
 		if($('.header').hasClass('opened')) {
 			$('.header').removeClass('opened');
@@ -53,36 +42,17 @@ $(function () {
 		}
 	});
 
-	/*
-		Open home-card on click of D logo
-	*/
-	$('#header-logo-link').click(function(){
+	/* General clickable internal card link to home */
+	$('.internal-card-link-home').click(function(){$('#top-menu-a-home').click();});
 
-		/* vars */
-		var lines_grid = $('.lines-grid');
-		var id = $(this).attr('href');
-		var card_items = $('.card-inner');
-		var card_item = $(id);
-		var menu_items = $('.top-menu li');
-		var menu_item = $('#top-menu-li-home');
+	/* General clickable internal card link to about */
+	$('.internal-card-link-about').click(function(){$('#top-menu-a-about').click();});
 
-		if(!menu_item.hasClass('active') & $('#home-card').length) {
+	/* General clickable internal card link to resume */
+	$('.internal-card-link-resume').click(function(){$('#top-menu-a-resume').click();});
 
-			/* close card items */
-			menu_items.removeClass('active');
-			lines_grid.removeClass('loaded');
-
-			/* open card item */
-			menu_item.addClass('active');
-			setTimeout(function(){
-				lines_grid.addClass('loaded');
-				$(card_items).removeClass('active');
-				$(card_item).addClass('active');
-			}, 1000);
-		}
-
-		return false;
-	});
+	/* General clickable internal card link to contacts */
+	$('.internal-card-link-contacts').click(function(){$('#top-menu-a-contacts').click();});
 
 	/*
 		Header Menu Desktop
@@ -119,21 +89,12 @@ $(function () {
 	}
 
 
-	/*
-		Youtube video background
-	*/
-	
-	if($('#video-bg').length) {
-		var myPlayer = $("#video-bg").YTPlayer();
-	}
+	/* Youtube video background */
+	if($('#video-bg').length) { var myPlayer = $("#video-bg").YTPlayer(); }
 	
 	
-	/*
-		Initialize masonry items
-	*/
-	
+	/* Initialize masonry items */
 	var $container = $('.grid-items');
-	
 	$container.imagesLoaded(function() {
 		$container.multipleFilterMasonry({
 			itemSelector: '.grid-item',
@@ -144,10 +105,7 @@ $(function () {
 	});
 	
 
-	/*
-		12. Initialize masonry filter
-	*/
-	
+	/* 12. Initialize masonry filter */
 	$('.filter-button-group').on('change', 'input[type="radio"]', function() {
 		if ($(this).is(':checked')) {
 			$('.f_btn').removeClass('active');
@@ -162,7 +120,6 @@ $(function () {
 				verticalFit: true
 			}
 		});
-	
 		/* popup video */
 		$('.has-popup-video').magnificPopup({
 			disableOn: 700,
@@ -172,7 +129,6 @@ $(function () {
 			fixedContentPos: false,
 			mainClass: 'popup-box'
 		});
-	
 		/* popup music */
 		$('.has-popup-music').magnificPopup({
 			disableOn: 700,
@@ -182,7 +138,6 @@ $(function () {
 			fixedContentPos: false,
 			mainClass: 'popup-box'
 		});
-	
 		/* popup media */
 		$('.has-popup-media').magnificPopup({
 			type: 'inline',
@@ -193,10 +148,7 @@ $(function () {
 	});
 	
 	
-	/*
-		Popups
-	*/
-	
+	/*-- Popups --*/
 	/* popup image */
 	$('.has-popup-image').magnificPopup({
 		type: 'image',
@@ -206,7 +158,6 @@ $(function () {
 			verticalFit: true
 		}
 	});
-	
 	/* popup video */
 	$('.has-popup-video').magnificPopup({
 		disableOn: 700,
@@ -216,7 +167,6 @@ $(function () {
 		fixedContentPos: false,
 		mainClass: 'popup-box'
 	});
-	
 	/* popup music */
 	$('.has-popup-music').magnificPopup({
 		disableOn: 700,
@@ -226,7 +176,6 @@ $(function () {
 		fixedContentPos: false,
 		mainClass: 'popup-box'
 	});
-	
 	/* popup media */
 	$('.has-popup-media').magnificPopup({
 		type: 'inline',
@@ -309,31 +258,17 @@ $(function () {
 		submitHandler: function() {
 		}
 	});
-	
-	
-	/*
-		Google Maps
-	*/
-	
-	if($('#map').length) {
-		initMap();
-	}
 
 
-	/*
-		NEW SCRIPTS
-	*/
-
+	/* NEW SCRIPTS */
 	if(($('.blogs-content').height() > $('.blogs-sidebar').height()) && (width > 1023)) {
 		$('.blogs-sidebar').css({'min-height' : $('.blogs-content').height()});
 	}
 	if(($('.blogs-content').height() < $('.blogs-sidebar').height()) && (width > 1023)) {
 		$('.blogs-content').css({'min-height' : $('.blogs-sidebar').height()});
 	}
-
 	$(window).resize(function() {
 		var width = $(window).width();
-		
 		if(($('.blogs-content').height() > $('.blogs-sidebar').height()) && (width > 1023)) {
 			$('.blogs-sidebar').css({'min-height' : $('.blogs-content').height()});
 		}
@@ -341,17 +276,13 @@ $(function () {
 			$('.blogs-content').css({'min-height' : $('.blogs-sidebar').height()});
 		}
 	});
-
 	/* Header Menu Inner Page */
 	$('.top-menu').on('click', 'a', function(){
-
-		if(!$('#home-card').length) {
-			location.href = '/' + $(this).attr('href');
-		}
-	
+		//if(!$('#home-card').length) {
+			location.href = /*'/' +*/ $(this).attr('href');
+		//}
 		return false;
 	});
-
 	var url_hash = location.hash;
 	var sectionElem = $(url_hash);
 	if(url_hash.indexOf('#') == 0 && url_hash.indexOf('-card') != -1 && sectionElem.length){
@@ -365,59 +296,3 @@ $(function () {
 	}
 
 });
-
-
-/*
-	Google Map Options
-*/
-
-function initMap() {
-	var myLatlng = new google.maps.LatLng(46.494732, 7.674420); // <- Your latitude and longitude
-	var styles = [
-		{
-			"stylers": [
-				{
-					"hue": "#ff1a00"
-				},
-				{
-					"invert_lightness": true
-				},
-				{
-					"saturation": -100
-				},
-				{
-					"lightness": 33
-				},
-				{
-					"gamma": 0.5
-				}
-			]
-		},
-		{
-			"featureType": "water",
-			"elementType": "geometry",
-			"stylers": [
-				{
-					"color": "#2D333C"
-				}
-			]
-		}
-	]
-
-	var mapOptions = {
-		zoom: 16,
-		center: myLatlng,
-		mapTypeControl: false,
-		disableDefaultUI: true,
-		zoomControl: true,
-		scrollwheel: false,
-		styles: styles
-	}
-	
-	var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-	var marker = new google.maps.Marker({
-		position: myLatlng,
-		map: map,
-		title: 'We are here!'
-	});
-}
