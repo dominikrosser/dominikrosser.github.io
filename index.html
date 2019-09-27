@@ -63,8 +63,10 @@
 		<header class="header">
 
 			<!-- logo -->
-			<div class="logo">
-				<a id="header-logo-link" href="#home-card"><span>D</span></a>
+			<div itemscope itemtype=”http://schema.org/Organization”>
+				<div class="logo">
+					<a itemprop=”url” id="header-logo-link" href="#home-card"><span>D</span></a>
+				</div>
 			</div>
 
 			<!-- menu -->
@@ -585,107 +587,53 @@
 								</div>
 							</div>
 
-							<!-- contacts items -->
-							<div class="row contacts-items">
-
-								<!-- contacts item -->
-								<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-									<div class="contacts-item card-box">
-										<div class="icon"><i class="la la-at"></i></div>
-										<div class="name">Email</div>
-										<p style="word-wrap: break-word;">dominik.rosser@protonmail.ch</p>
-									</div>
-								</div>
-
-								<!-- contacts item -->
-								<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-									<div class="contacts-item card-box">
-										<div class="icon"><i class="la la-phone"></i></div>
-										<div class="name">Phone</div>
-										<p>
-											+41 79 666 91 27
-										</p>
-									</div>
-								</div>
-
-								<!-- contacts item -->
-								<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-									<div class="contacts-item card-box">
-										<div class="icon"><i class="la la-check-square"></i></div>
-										<div class="name">Freelance</div>
-										<p>
-											Available
-										</p>
-									</div>
-								</div>
-
-								<!-- contacts item -->
-								<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-									<div class="contacts-item card-box">
-										<div class="icon"><i class="la la-map-marker"></i></div>
-										<div class="name">Address</div>
-										<p>
-											Blümlisalpstrasse 55, 3718 Kandersteg
-										</p>
-									</div>
-								</div>
-
-							</div>
-
-						</div>
-
-						<!--
-							Contacts Form
-						-->
-						<div class="content contacts-form">
-							<div class="row">
-								<div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-
-									<!-- title -->
-									<!--
-									<div class="title"><span>Contact</span> Form</div>
-									-->
-								</div>
-							</div>
-							<div class="row">
-								<div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-
-									<!-- form -->
-									<!--
-									<div class="contact_form card-box">
-										<form id="cform" method="post">
-											<div class="row">
-												<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-													<div class="group-val">
-														<input type="text" name="name" placeholder="Full Name" />
-													</div>
-												</div>
-												<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-													<div class="group-val">
-														<input type="text" name="email" placeholder="Email Address" />
-													</div>
-												</div>
-												<div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-													<div class="group-val">
-														<textarea name="message" placeholder="Your Message"></textarea>
-													</div>
-												</div>
-											</div>
-											<div class="align-left">
-												<a href="#" class="button" onclick="$('#cform').submit(); return false;">
-													<span class="text">Send Message</span>
-													<span class="icon"><i class="la la-arrow-right"></i></span>
-												</a>
-											</div>
-										</form>
-										<div class="alert-success">
-											<p>Thanks, your message is sent successfully.</p>
+							<section itemscope itemtype=”http://schema.org/Person></div>
+								<!-- contacts items -->
+								<div class="row contacts-items">
+									<!-- contacts item -->
+									<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+										<div class="contacts-item card-box">
+											<div class="icon"><i class="la la-male"></i></div>
+											<div class="name">Name</div>
+											<p itemprop="name">Dominik Rosser</p>
 										</div>
 									</div>
-									-->
-
+									<!-- contacts item -->
+									<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+										<div class="contacts-item card-box" itemprop=”address” itemscope itemtype=”http://schema.org/PostalAddress”>
+											<div class="icon"><i class="la la-at"></i></div>
+											<div class="name">Email</div>
+											<p style="word-wrap: break-word;"><span itemprop="email">dominik.rosser@protonmail.ch</span></p>
+										</div>
+									</div>
+									<!-- contacts item -->
+									<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+										<div class="contacts-item card-box" itemprop=”address” itemscope itemtype=”http://schema.org/PostalAddress”>
+											<div class="icon"><i class="la la-phone"></i></div>
+											<div class="name">Phone</div>
+											<p><span itemprop=”telephone”>+41 79 666 91 27</span></p>
+										</div>
+									</div>
+									<!-- contacts item -->
+									<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+										<div class="contacts-item card-box" itemprop=”address” itemscope itemtype=”http://schema.org/PostalAddress”>
+											<div class="icon"><i class="la la-map-marker"></i></div>
+											<div class="name">Address</div>
+											<p><span itemprop=”streetAddress”>Blümlisalpstrasse 55</span>, <span itemprop=”postalCode”>3718</span> <span itemprop=”addressLocality”>Kandersteg</span></p>
+										</div>
+									</div>
+									<!-- contacts item -->
+									<div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+										<div class="contacts-item card-box">
+											<div class="icon"><i class="la la-check-square"></i></div>
+											<div class="name">Freelance</div>
+											<p>Available</p>
+										</div>
+									</div>
 								</div>
-							</div>
+							</section>
+
+
 						</div>
 
 					</div>
